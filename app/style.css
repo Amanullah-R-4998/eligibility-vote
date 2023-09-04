@@ -8,3 +8,10 @@ body {
     display: flexbox;
 }
 
+.elgible {
+    color: green;
+}
+
+.nelgible {
+    color: red;
+}

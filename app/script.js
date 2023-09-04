@@ -6,6 +6,7 @@ const clearBtn = document.querySelector("#resetValue");
 
 //funcion for displaying result in the webPage
 function printResult(text) {
+  //check the given input
   if (text) {
     resultDiv.innerHTML = "<h3>" + text + "</h3>";
   }
@@ -22,17 +23,16 @@ calculateBtn.addEventListener("click", function () {
     printResult("Please, Enter your age!");
     resultDiv.style.color = "grey";
     return;
-  }
-
-  //check the given input
-  if (userAge < 18) {
+  } else if (userAge < 18) {
     result = "Your are NOT eligible to vote";
     resultDiv.style.color = "red";
+  } else if (userAge > 150) {
+    result = "Enter the valid Age";
+    resultDiv.style.color = "grey";
   } else {
     result = "Your are eligible to vote";
     resultDiv.style.color = "green";
   }
-
   printResult(result);
 });
 
